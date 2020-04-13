@@ -1,0 +1,12 @@
+rule "Enable/Disable Kamera"
+when
+    Item Schalter_Kamera changed
+then
+     if (Schalter_Kamera.state == CLOSED ) {
+            executeCommandLine("python@@/etc/openhab2/scripts/blink/enable-kamera.py")
+    }
+    else 
+    {
+        executeCommandLine("python@@/etc/openhab2/scripts/blink/disable-kamera.py")
+    }
+end
