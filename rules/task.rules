@@ -1,0 +1,12 @@
+rule "Enable/Disable Kamera"
+when
+    Item Schalter_Kamera changed
+then
+     if (Schalter_Kamera.state == CLOSED ) {
+            executeCommandLine("bash@@/etc/openhab2/scripts/blink/blink-action.sh@@<NetworkID>@@<CameraID>@@disable")
+    }
+    else 
+    {
+       executeCommandLine("bash@@/etc/openhab2/scripts/blink/blink-action.sh@@<NetworkID>@@<CameraID>@@enable")
+    }
+end
