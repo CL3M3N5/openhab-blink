@@ -9,13 +9,3 @@ Original protocol hacking by MattTW : https://github.com/MattTW/BlinkMonitorProt
 Login API calls faster than 60 seconds is not recommended as it can overwhelm Blink's servers. Please use this module responsibly.
 
 
-First check if the user openhab can use sudo with no password.
-Adding the user openhab to the sudoers with no password should
-
-```Shell
-sudo visudo -f /etc/sudoers.d/010_pi-nopasswd
-```
-Adding following lines
-```Shell
-openhab ALL=(ALL) NOPASSWD: ALL
-```
